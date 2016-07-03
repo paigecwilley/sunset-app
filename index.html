@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<p><button onclick="geoFindMe()">Show my location</button></p>
+<div id="out"></div>
+
+<script type="text/javascript">
+	navigator.geolocation.getCurrentPosition(function(position){
+		console.log(position);
+	})
+</script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
