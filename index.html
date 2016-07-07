@@ -5,16 +5,17 @@
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
+<body id='body-id' class='body-background'>
 
-	<div class="sunset-time sun-color" id="sunset-container" onclick="geoFindMe()">
+		<div class="sunset-time sun-color" id="sunset-container" onclick="geoFindMe()">
 
-		<p class="text">Click to get your local sunset</p>
-		<p id="out" class="sunset-time"></p>
-		<!-- <div id="out"></div> -->
-	<!-- 	<p><button onclick="geoFindMe()">Show my location</button></p> -->
+			<p class="text">Click to get your local sunset</p>
+			<p id="out" class="sunset-time"></p>
+			<!-- <div id="out"></div> -->
+			<!-- 	<p><button onclick="geoFindMe()">Show my location</button></p> -->
 
-	</div>
+		</div>
+
 
 	<script type="text/javascript">
 		navigator.geolocation.getCurrentPosition(function(position){

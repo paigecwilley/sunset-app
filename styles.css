@@ -3,20 +3,17 @@ html, body {
 	padding: 0;
 }
 
-/*#sunset-time {
-	position:fixed;
-	top:20%;
-	right:30%;
-	padding:10% 15% 10% 16%;
-	background: lightsteelblue;
-	box-sizing:border-box;
-	border-radius: 50%;
+.body-background{
+	background:#71acd6;
+}
 
+.night-color {
+	background: #213340;
+}
 
-}*/
-
-	
-
+.sunset-time:hover + #body-id {
+	background: black;
+}	
 
 .sunset-time {
 	border-radius: 50%;

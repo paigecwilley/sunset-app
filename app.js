@@ -26,33 +26,40 @@ function geoFindMe() {
 
   function getSunset() {
 
-  		var celestialObject = document.getElementById('sunset-container').classList;
-			console.log(celestialObject);
+  	var celestialObject = document.getElementById('sunset-container').classList;
+  	console.log(celestialObject);
 
-			if(celestialObject.contains('sun-color')){
-				celestialObject.remove('sun-color');
-				celestialObject.add('moon-color');
-			}
-			
-		var baseUrl = 'http://api.sunrise-sunset.org/json?';
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState === XMLHttpRequest.DONE) 
-			{
-				var result = JSON.parse(xhr.responseText);
-				var sunset_utc = new Date(result.results.sunset);
-				var sunset_local = sunset_utc.toLocaleTimeString('en-US', {'hour12' : true});
-				console.log(sunset_local);
-				output.innerHTML = sunset_local;
+  	if(celestialObject.contains('sun-color')){
+  		celestialObject.remove('sun-color');
+  		celestialObject.add('moon-color');
+  	}
 
-			}
+  	var sky = document.getElementById('body-id').classList;
 
-		}
+  	if(sky.contains('body-background')){
+  		sky.remove('body-background');
+  		sky.add('night-color');
+  	}
 
-		var reqUrl = baseUrl + 'lat=' + latitude + '&lng=' + longitude + '&formatted=0';
-		console.log(reqUrl);
-		xhr.open('GET', reqUrl);
-		xhr.send();
+  	var baseUrl = 'http://api.sunrise-sunset.org/json?';
+  	var xhr = new XMLHttpRequest();
+  	xhr.onreadystatechange = function() {
+  		if (xhr.readyState === XMLHttpRequest.DONE) 
+  		{
+  			var result = JSON.parse(xhr.responseText);
+  			var sunset_utc = new Date(result.results.sunset);
+  			var sunset_local = sunset_utc.toLocaleTimeString('en-US', {'hour12' : true});
+  			console.log(sunset_local);
+  			output.innerHTML = sunset_local;
+
+  		}
+
+  	}
+
+  	var reqUrl = baseUrl + 'lat=' + latitude + '&lng=' + longitude + '&formatted=0';
+  	console.log(reqUrl);
+  	xhr.open('GET', reqUrl);
+  	xhr.send();
 
 		
 		
