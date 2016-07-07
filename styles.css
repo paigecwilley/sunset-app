@@ -1,0 +1,53 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+/*#sunset-time {
+	position:fixed;
+	top:20%;
+	right:30%;
+	padding:10% 15% 10% 16%;
+	background: lightsteelblue;
+	box-sizing:border-box;
+	border-radius: 50%;
+
+
+}*/
+
+	
+
+
+.sunset-time {
+	border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	position:fixed;
+	top:20%;
+	right:30%;
+	transition: background 1s;
+	
+	text-align: center;
+	
+}
+ 
+ .sun-color {
+ 	background: #FDB813;
+ }
+
+ .moon-color {
+	 background: #DBE6E0;
+}
+
+.sunset-time.moon-color .text {
+	opacity: 0;
+}
+
+
+
+#out {
+	font-family: Candara;
+	font-size: 20px;
+}
+
+

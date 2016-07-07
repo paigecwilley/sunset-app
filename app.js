@@ -13,8 +13,7 @@ function geoFindMe() {
     latitude  = position.coords.latitude;
     longitude = position.coords.longitude;
     console.log('Here is the lat: ' + latitude + ' Here is the long: ' + longitude);
-    getSun();
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+    getSunset();
   };
 
   function error() {
@@ -25,7 +24,16 @@ function geoFindMe() {
 
   navigator.geolocation.getCurrentPosition(success, error);
 
-  function getSun() {
+  function getSunset() {
+
+  		var celestialObject = document.getElementById('sunset-container').classList;
+			console.log(celestialObject);
+
+			if(celestialObject.contains('sun-color')){
+				celestialObject.remove('sun-color');
+				celestialObject.add('moon-color');
+			}
+			
 		var baseUrl = 'http://api.sunrise-sunset.org/json?';
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
@@ -35,12 +43,20 @@ function geoFindMe() {
 				var sunset_utc = new Date(result.results.sunset);
 				var sunset_local = sunset_utc.toLocaleTimeString('en-US', {'hour12' : true});
 				console.log(sunset_local);
+				output.innerHTML = sunset_local;
+
 			}
 
 		}
+
 		var reqUrl = baseUrl + 'lat=' + latitude + '&lng=' + longitude + '&formatted=0';
+		console.log(reqUrl);
 		xhr.open('GET', reqUrl);
 		xhr.send();
+
+		
+		
+	
 
 	}	
 }

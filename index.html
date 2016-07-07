@@ -3,16 +3,24 @@
 <head>
 	<title></title>
 	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<p><button onclick="geoFindMe()">Show my location</button></p>
-<div id="out"></div>
 
-<script type="text/javascript">
-	navigator.geolocation.getCurrentPosition(function(position){
-		console.log(position);
-	})
-</script>
-<script type="text/javascript" src="app.js"></script>
+	<div class="sunset-time sun-color" id="sunset-container" onclick="geoFindMe()">
+
+		<p class="text">Click to get your local sunset</p>
+		<p id="out" class="sunset-time"></p>
+		<!-- <div id="out"></div> -->
+	<!-- 	<p><button onclick="geoFindMe()">Show my location</button></p> -->
+
+	</div>
+
+	<script type="text/javascript">
+		navigator.geolocation.getCurrentPosition(function(position){
+			console.log(position);
+		})
+	</script>
+	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
