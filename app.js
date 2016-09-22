@@ -2,7 +2,16 @@ var latitude;
 var longitude;
 
 function geoFindMe() {
+
+  var button = document.getElementById('sunset-button').classList;
+
+  button.add('hide-button');
+
   var output = document.getElementById("out");
+
+  // output.add('show-sunset-time');
+
+
 
   if (!navigator.geolocation){
     output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
@@ -27,19 +36,28 @@ function geoFindMe() {
   function getSunset() {
 
   	var celestialObject = document.getElementById('sunset-container').classList;
-  	console.log(celestialObject);
+    var sun = document.getElementById('sun').classList;
 
-  	if(celestialObject.contains('sun-color')){
-  		celestialObject.remove('sun-color');
-  		celestialObject.add('moon-color');
+  	if(celestialObject.contains('sunset-time')){
+  		celestialObject.add('sky-transition');
   	}
 
-  	var sky = document.getElementById('body-id').classList;
+    if(sun.contains('sun')){
+    sun.add('set-the-sun');
+    }
 
-  	if(sky.contains('body-background')){
-  		sky.remove('body-background');
-  		sky.add('night-color');
+  	var background = document.getElementById('body-id').classList;
+
+  	if(background.contains('body-background')){
+  		background.remove('body-background');
+  		background.add('night-color');
   	}
+
+   
+
+
+
+    // var skyOrb = document.getElementById('sunset-container')
 
   	var baseUrl = 'http://api.sunrise-sunset.org/json?';
   	var xhr = new XMLHttpRequest();

@@ -4,7 +4,9 @@ html, body {
 }
 
 .body-background{
-	background:#71acd6;
+	background: #dae1dd;
+	/*background:#71acd6;*/
+	transition:background 1s;
 }
 
 .night-color {
@@ -17,34 +19,153 @@ html, body {
 
 .sunset-time {
 	border-radius: 50%;
-	width: 300px;
-	height: 300px;
-	position:fixed;
-	top:20%;
-	right:30%;
+	background-image:linear-gradient(#a595a0 40%, #fa8e68 71%, #fcdf61 87%);
+	
+	width: 60vw;
+	height: 60vw;
+	margin-top: calc( (100vh - 60vw) / 2 );
+	margin-left: calc( (100vw - 60vw) / 2 );
+	position:relative;
 	transition: background 1s;
-	
 	text-align: center;
+	overflow: hidden;
+	z-index: 100;
 	
+}
+
+.sunset-time:before {
+background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  83%);
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0; left: 0;
+	opacity: 0;
+	width: 100%;
+	z-index: -100;
+	transition: opacity 4s;
+}
+
+
+
+
+.sunset-time.sky-transition:before {
+	opacity: 1;
+}
+
+.sun {
+	width: 35%;
+  height: 35%;
+  border-radius: 100%;
+  margin: 4.7169811321vw auto 0;
+  background-size: 400% 400%;
+	background: linear-gradient(12deg, #fcdf61, #fa8e68);
+	transform: rotateZ(180deg);
+	transition: transform 4s;
+  
+	
+
+}
+
+
+.sun.set-the-sun {
+	transform: translate(0%, 200%) rotateZ(0deg);
+}
+
+#island {
+	position: absolute;
+	top: 44.339622642vw;
+	width: 100%;
+}
+
+#island path{
+	stroke: #015786;
+	fill: #015786;
+}
+
+#water {
+  height: 24%;
+  width: 100%;
+  background:repeating-radial-gradient(ellipse farthest-corner at center -184%,  #eed9bd 22%, #498392 72%) repeat scroll 0 0 #498392;
+position: absolute;
+bottom: -3.773584906vw;
 }
  
- .sun-color {
- 	background: #FDB813;
- }
 
- .moon-color {
-	 background: #DBE6E0;
+#sunset-button.hide-button {
+	display:none;
 }
+
+
+
 
 .sunset-time.moon-color .text {
 	opacity: 0;
 }
 
 
+#click {
+	text-align: center;
+	margin-top: 50px;
+}
 
-#out {
-	font-family: Candara;
-	font-size: 20px;
+#sunset-button {
+	padding: 20px 11px;
+	border: none;
+	font-size: 0.8em;
+	background-color:#9caccd;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
 }
 
 
+#sunset-button:hover {
+	background-color:#476e9e;
+}
+
+#sunset-button:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+#out {
+	font-family: Candara;
+	font-size: 25px;
+	color: #fff;
+}
+
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:38% 0%
+        }
+    50%{background-position:63% 100%;
+   
+        }
+    100%{background-position:38% 0%;
+        transform: rotate(180deg);
+        }
+       } 
+
+
+@-webkit-keyframes setTheSun {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(0, 200%);
+	}
+}
