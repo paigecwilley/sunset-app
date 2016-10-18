@@ -57,7 +57,7 @@ background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  8
 	width: 35%;
   height: 35%;
   border-radius: 100%;
-  margin: 4.7169811321vw auto 0;
+  margin: 7.716981% auto 0;
   background-size: 400% 400%;
 	background: linear-gradient(12deg, #fcdf61, #fa8e68);
 	transform: rotateZ(180deg);
@@ -74,7 +74,7 @@ background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  8
 
 #island {
 	position: absolute;
-	top: 44.339622642vw;
+	top: 74%;
 	width: 100%;
 }
 
@@ -88,7 +88,7 @@ background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  8
   width: 100%;
   background:repeating-radial-gradient(ellipse farthest-corner at center -184%,  #eed9bd 22%, #498392 72%) repeat scroll 0 0 #498392;
 position: absolute;
-bottom: -3.773584906vw;
+bottom: -5.773585%;
 }
  
 
@@ -169,3 +169,15 @@ bottom: -3.773584906vw;
 		transform: translate(0, 200%);
 	}
 }
+
+
+@media all and (min-width: 1160px) {
+	.sunset-time {
+		width: 40vw;
+		height: 40vw;
+		margin-top: calc( (100vh - 40vw) / 2 );
+		margin-left: calc( (100vw - 40vw) / 2 );
+	}
+}
+
+
