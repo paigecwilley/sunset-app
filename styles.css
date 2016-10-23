@@ -6,6 +6,7 @@ html, body {
 .body-background{
 	background: #dae1dd;
 	/*background:#71acd6;*/
+	-webkit-transition: background 1s;
 	transition:background 1s;
 }
 
@@ -19,6 +20,7 @@ html, body {
 
 .sunset-time {
 	border-radius: 50%;
+	background-image:-webkit-linear-gradient(#a595a0 40%, #fa8e68 71%, #fcdf61 87%);
 	background-image:linear-gradient(#a595a0 40%, #fa8e68 71%, #fcdf61 87%);
 	
 	width: 60vw;
@@ -26,6 +28,7 @@ html, body {
 	margin-top: calc( (100vh - 60vw) / 2 );
 	margin-left: calc( (100vw - 60vw) / 2 );
 	position:relative;
+	-webkit-transition: background 1s;
 	transition: background 1s;
 	text-align: center;
 	overflow: hidden;
@@ -34,6 +37,7 @@ html, body {
 }
 
 .sunset-time:before {
+background-image:-webkit-linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  83%);
 background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  83%);
 	content: '';
 	display: block;
@@ -43,6 +47,7 @@ background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  8
 	opacity: 0;
 	width: 100%;
 	z-index: -100;
+	-webkit-transition: opacity 4s;
 	transition: opacity 4s;
 }
 
@@ -59,9 +64,14 @@ background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  8
   border-radius: 100%;
   margin: 7.716981% auto 0;
   background-size: 400% 400%;
+	background: -webkit-linear-gradient(78deg, #fcdf61, #fa8e68);
 	background: linear-gradient(12deg, #fcdf61, #fa8e68);
-	transform: rotateZ(180deg);
+	-webkit-transform: rotateZ(180deg);
+	        transform: rotateZ(180deg);
+	-webkit-transition: -webkit-transform 4s;
+	transition: -webkit-transform 4s;
 	transition: transform 4s;
+	transition: transform 4s, -webkit-transform 4s;
   
 	
 
@@ -69,7 +79,8 @@ background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  8
 
 
 .sun.set-the-sun {
-	transform: translate(0%, 200%) rotateZ(0deg);
+	-webkit-transform: translate(0%, 200%) rotateZ(0deg);
+	        transform: translate(0%, 200%) rotateZ(0deg);
 }
 
 #island {
@@ -86,6 +97,7 @@ background-image:linear-gradient(#2e4d5c 20%, #7da3bc 61%,#ede5ce 76%,#f9fad1  8
 #water {
   height: 24%;
   width: 100%;
+  background:-webkit-repeating-radial-gradient(ellipse farthest-corner at center -184%,  #eed9bd 22%, #498392 72%) repeat scroll 0 0 #498392;
   background:repeating-radial-gradient(ellipse farthest-corner at center -184%,  #eed9bd 22%, #498392 72%) repeat scroll 0 0 #498392;
 position: absolute;
 bottom: -5.773585%;
@@ -114,8 +126,6 @@ bottom: -5.773585%;
 	border: none;
 	font-size: 0.8em;
 	background-color:#9caccd;
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
 	border-radius:8px;
 	display:inline-block;
 	cursor:pointer;
@@ -155,18 +165,21 @@ bottom: -5.773585%;
    
         }
     100%{background-position:38% 0%;
-        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
         }
        } 
 
 
 @-webkit-keyframes setTheSun {
 	0% {
-		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+		        transform: translate(0, 0);
 	}
 
 	100% {
-		transform: translate(0, 200%);
+		-webkit-transform: translate(0, 200%);
+		        transform: translate(0, 200%);
 	}
 }
 
