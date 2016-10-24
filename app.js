@@ -59,7 +59,7 @@ function geoFindMe() {
 
     // var skyOrb = document.getElementById('sunset-container')
 
-  	var baseUrl = 'http://api.sunrise-sunset.org/json?';
+  	var baseUrl = 'https://api.sunrise-sunset.org/json?';
   	var xhr = new XMLHttpRequest();
   	xhr.onreadystatechange = function() {
   		if (xhr.readyState === XMLHttpRequest.DONE) 
